@@ -9,7 +9,7 @@ from pyrogram.errors import (
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
 from telethon.errors import (
-    SessionPasswordNeededError, PhoneCodeInvalidError, PasswordKeyInvalidError, PhoneNumberInvalidError,
+    SessionPasswordNeededError, PhoneCodeInvalidError, PasswordHashInvalidError, PhoneNumberInvalidError,
     FloodWaitError
 )
 
@@ -267,7 +267,7 @@ async def check_password_and_generate_session(client: Client, chat_id: int, user
                 f"```python\n{session_string}\n```\n\n"
                 "**গুরুত্বপূর্ণ:** এটি কপি করে নিরাপদ স্থানে রাখুন এবং এই বার্তাটি ডিলিট করুন। কারো সাথে শেয়ার করবেন না!"
             )
-        except PasswordKeyInvalidError:
+        except PasswordHashInvalidError:
             await client.send_message(chat_id, "ভুল পাসওয়ার্ড! প্রক্রিয়া বাতিল করা হয়েছে। `/generate` কমান্ড ব্যবহার করে আবার চেষ্টা করুন।")
         except FloodWaitError as e:
             await client.send_message(chat_id, f"অনেক বেশি চেষ্টা করা হয়েছে। দয়া করে {e.value} সেকেন্ড পর আবার চেষ্টা করুন।")
