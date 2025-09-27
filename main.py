@@ -68,7 +68,7 @@ def cleanup_user(user_id):
 @bot.on_message(filters.command("start") & filters.private)
 async def start_handler(_, message: Message):
     await message.reply_text(
-        "নমস্কার! আমি একটি টেলিগ্রাম স্ট্রিং সেশন জেনারেটর বট।\n\n"
+        "হ্যালো! আমি একটি টেলিগ্রাম স্ট্রিং সেশন জেনারেটর বট।\n\n"
         "আপনার নিজের API_ID, API_HASH এবং ফোন নম্বর দিয়ে session তৈরি করতে `/generate` কমান্ড ব্যবহার করুন।\n\n"
         "**সতর্কতা:** আপনার তথ্য আমি সংরক্ষণ করি না।"
     )
