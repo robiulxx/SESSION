@@ -1,6 +1,5 @@
 pyrogram
-tgcrypto
 telethon
-Flask
-nest_asyncio
+flask
 requests
+nest-asyncio
