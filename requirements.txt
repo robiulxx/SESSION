@@ -3,3 +3,4 @@ tgcrypto
 telethon
 Flask
 nest_asyncio
+requests
